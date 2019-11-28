@@ -14,6 +14,8 @@ gem 'sass-rails', '~> 5.0.6'
 #gem 'bootstrap-sass', '3.3.7'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '3.2.0'
+# For crypt password
+gem 'bcrypt', '3.1.12'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
