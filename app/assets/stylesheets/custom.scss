@@ -3,7 +3,7 @@
 @import "bootstrap";
 
 $gray-medium-light: #eaeaea;
-$gray-light: #f1f1;
+$gray-light: #000;
 $gray-darker: #000;
 $gray: rgba(36, 39, 37, 0.753);
 
@@ -175,4 +175,17 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
 }
