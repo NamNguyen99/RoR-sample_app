@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     attr_accessor :remember_token
-    before_save { email.downcase! }
+    before_save { self.email = email.downcase }
     VALID_EMAIL_REGEX = /\A[\w+\-]+(\.[\w+\-]+)*@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
     validates :name, presence: true, 
                     length: {maximum: 50}
@@ -10,7 +10,7 @@ class User < ApplicationRecord
                     format: {with: VALID_EMAIL_REGEX},
                     uniqueness: { case_sensitive: false}
     has_secure_password
-    validates :password, length: {minimum: 6}
+    validates :password, presence:true, length: {minimum: 6}, allow_nil: true
 
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ?
