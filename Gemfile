@@ -11,7 +11,7 @@ gem 'rails', '~> 5.2.3'
 gem 'puma', '~> 3.9.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.6'
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap-sass', '3.4.1'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '3.2.0'
 # For crypt password
