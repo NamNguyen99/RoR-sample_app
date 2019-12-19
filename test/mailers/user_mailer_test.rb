@@ -25,4 +25,8 @@ class UserMailerTest < ActionMailer::TestCase
     assert_match CGI.escape(user.email), mail.body.encoded
   end
 
+  test "active_notification" do
+    
+  end
+
 end

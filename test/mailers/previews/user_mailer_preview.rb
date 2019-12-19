@@ -15,4 +15,8 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.password_reset(user)
   end
 
+  def active_notification
+    user = User.first
+    UserMailer.active_notification(user)
+  end
 end

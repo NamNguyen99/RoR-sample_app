@@ -79,6 +79,13 @@ class User < ApplicationRecord
         following.include?(other_user)
     end
 
+    def send_notification_email
+        UserMailer.active_notification(self).deliver if Time.now == Time.now.beginning_of_day
+    end
+
+    def action_the_day_before 
+    end
+
     private
     def downcase_email
         self.email = email.downcase

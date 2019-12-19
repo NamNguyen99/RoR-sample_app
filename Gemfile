@@ -26,6 +26,7 @@ gem 'carrierwave',             '1.2.2'
 gem 'mini_magick',             '4.7.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
+gem 'whenever', :require => false
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '4.2.2'
