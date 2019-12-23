@@ -16,6 +16,9 @@ module SessionsHelper
     def current_user?(user)
         user == current_user
     end
+    def log_as_facebook?(user)
+        !user.uid.nil?
+    end
 
     def current_user
         if user_id = session[:user_id]

@@ -24,5 +24,11 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:edit, :new, :create, :update]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_scope :user do
+    get 'sign_in', to: 'devise/session#new', as: :new_user_session
+    get 'sign_out', to: 'devise/sessions#destroy', as: :logout_path
+  end
+  get "/auth/:action/callback", controller: "authentications", constraints: { action: /facebook/ }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
