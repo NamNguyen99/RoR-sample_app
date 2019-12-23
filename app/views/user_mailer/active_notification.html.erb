@@ -1,24 +1,24 @@
 <h1>Sample App</h1>
-<p>Hi <%= user.name %>,</p>
-<p>Yesterday you have <%= Relationship.where("followed_id = :user_id AND created_at > :time",user_id: user.id, time: 1.day.ago ).count %> 
-    followers, <%= Relationship.where("follower_id = :user_id AND created_at > :time",user_id: user.id, time: 1.day.ago ).count %> following 
-    and <%= Micropost.where("user_id = :id AND created_at > :time", id: user.id, time: 1.day.ago).count %> microposts
+<p>Hi <%= @user.name %>,</p>
+<p>Yesterday you have <%= Relationship.where("followed_id = :user_id AND created_at > :time",user_id: @user.id, time: 1.day.ago ).count %> 
+    followers, <%= Relationship.where("follower_id = :user_id AND created_at > :time",user_id: @user.id, time: 1.day.ago ).count %> following 
+    and <%= Micropost.where("user_id = :id AND created_at > :time", id: @user.id, time: 1.day.ago).count %> microposts
 </p>
 <p>Followers</p>
 <ul>
-    <%= Relationship.where("followed_id = :user_id AND created_at > :time",user_id: user.id, time: 1.day.ago ).each do |relation| %>
+    <% Relationship.where("followed_id = :user_id AND created_at > :time",user_id: @user.id, time: 1.day.ago ).each do |relation| %>
         <li><%= User.find_by(id: relation.follower_id).name %></li>
-    <%= end %>
+    <% end %>
 </ul>
 <p>Following</p>
 <ul>
-    <%= Relationship.where("follower_id = :user_id AND created_at > :time",user_id: user.id, time: 1.day.ago).each do |relation| %>
+    <% Relationship.where("follower_id = :user_id AND created_at > :time",user_id: @user.id, time: 1.day.ago).each do |relation| %>
         <li><%= User.find_by(id: relation.followed_id).name %></li>
-    <%= end %>
+    <% end %>
 </ul>
 <p>Micropost</p>
 <ul>
-    <%= Micropost.where("user_id = :id AND created_at > :time", id: user.id, time: 1.day.ago).each do |micropost| %>
+    <% Micropost.where("user_id = :id AND created_at > :time", id: @user.id, time: 1.day.ago).each do |micropost| %>
         <li><%= micropost.content %></li>
-    <%= end%>
+    <% end%>
 </ul>
