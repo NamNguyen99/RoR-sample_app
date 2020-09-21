@@ -1,7 +1,8 @@
 version: 2
 updates:
 - package-ecosystem: bundler
-  directory: "/"
+  directory: '/'
+  open-pull-requests-limit: 10
   schedule:
     interval: daily
-  open-pull-requests-limit: 10
+  versioning-strategy: lockfile-only
