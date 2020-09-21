@@ -1,7 +1,16 @@
 version: 2
 updates:
 - package-ecosystem: bundler
-  directory: "/"
+  allowed_updates:
+  - match:
+    dependency_type: "development"
+    dependency-type: all
+  - match:
+    dependency_type: "production"
+    update_type: "security"
+  directory: '/'
+  open-pull-requests-limit: 10
   schedule:
     interval: daily
-  open-pull-requests-limit: 10
+  version_requirement_updates: "increase_versions"
+  versioning-strategy: lockfile-only
