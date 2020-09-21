@@ -70,7 +70,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.5)
+    concurrent-ruby (1.1.7)
     crass (1.0.5)
     devise (4.7.1)
       bcrypt (~> 3.0)
@@ -84,8 +84,8 @@ GEM
     erubi (1.9.0)
     excon (0.71.1)
     execjs (2.7.0)
-    faker (1.7.3)
-      i18n (~> 0.5)
+    faker (2.14.0)
+      i18n (>= 1.6, < 2)
     faraday (0.17.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.3)
@@ -265,7 +265,7 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    i18n (0.9.5)
+    i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     ipaddress (0.8.3)
     jbuilder (2.7.0)
@@ -455,7 +455,7 @@ DEPENDENCIES
   carrierwave (= 1.2.2)
   coffee-rails (= 4.2.2)
   devise
-  faker (= 1.7.3)
+  faker (= 2.14.0)
   fog (= 1.42)
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)

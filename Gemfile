@@ -17,7 +17,7 @@ gem 'uglifier', '3.2.0'
 # For crypt password
 gem 'bcrypt', '3.1.12'
 # Sample users
-gem 'faker', '1.7.3'
+gem 'faker', '2.14.0'
 # Pagination
 gem 'will_paginate', '3.1.7'
 gem 'bootstrap-will_paginate', '1.0.0'
